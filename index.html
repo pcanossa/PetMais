@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet+ | Atendimento Veterinário Domiciliar e Teleconsulta</title>
+    <meta name="description" content="Pet+ oferece atendimento veterinário de qualidade no conforto da sua casa e por teleconsulta. Consultas, vacinas e cuidados para seu melhor amigo.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon (Ícone da Aba do Navegador) - Substitua pelo seu ícone -->
+    <link rel="icon" href="https://i.imgur.com/J28vL6p.png" type="image/png">
+
+    <script>
+        // Configuração customizada do Tailwind para adicionar as cores da marca
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pet-teal': '#009688', // Tom de verde-azulado principal
+                        'pet-coral': '#FF7F50', // Tom de laranja/coral para destaque
+                        'pet-dark-gray': '#374151',
+                    },
+                    fontFamily: {
+                        'sans': ['Nunito', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilo para garantir que o hero section ocupe a tela e tenha uma sobreposição escura para legibilidade */
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1548681528-6a5c45b66b42?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-pet-dark-gray font-sans">
+
+    <!-- CABEÇALHO E NAVEGAÇÃO -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- LOGOMARCA -->
+            <a href="#" class="flex items-center">
+                <img src="./PET.png" alt="Logomarca Pet+" class="h-12 md:h-16">
+            </a>
+
+            <!-- MENU DESKTOP -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#servicos" class="hover:text-pet-teal transition duration-300">Serviços</a>
+                <a href="#como-funciona" class="hover:text-pet-teal transition duration-300">Como Funciona</a>
+                <a href="#sobre" class="hover:text-pet-teal transition duration-300">Sobre Nós</a>
+                <a href="#contato" class="bg-pet-coral text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition duration-300 shadow-lg">Agende uma Consulta</a>
+            </div>
+
+            <!-- MENU MOBILE (BOTÃO) -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-pet-dark-gray focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- MENU MOBILE (CONTEÚDO) -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white py-4">
+            <a href="#servicos" class="block text-center py-2 px-4 text-sm hover:bg-gray-100">Serviços</a>
+            <a href="#como-funciona" class="block text-center py-2 px-4 text-sm hover:bg-gray-100">Como Funciona</a>
+            <a href="#sobre" class="block text-center py-2 px-4 text-sm hover:bg-gray-100">Sobre Nós</a>
+            <a href="#contato" class="block text-center mt-2 mx-4 bg-pet-coral text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition duration-300">Agende uma Consulta</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- SEÇÃO HERO -->
+        <section class="hero-section h-[60vh] md:h-[80vh] flex items-center justify-center text-white text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">Cuidado Veterinário no Conforto do Seu Lar</h1>
+                <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">Menos estresse para seu pet, mais conveniência para você. Atendimento profissional e carinhoso que vai até sua casa.</p>
+                <a href="#contato" class="bg-pet-teal text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-opacity-90 transition duration-300 shadow-xl">Agende pelo WhatsApp</a>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE SERVIÇOS -->
+        <section id="servicos" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nossos Serviços</h2>
+                <p class="text-gray-600 mb-12 max-w-2xl mx-auto">Oferecemos um cuidado completo para a saúde e bem-estar do seu animal de estimação, seja presencial ou online.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                    <!-- Card de Serviço 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
+                        <div class="bg-pet-teal inline-block p-4 rounded-full mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Consultas de Rotina</h3>
+                        <p class="text-gray-600">Check-ups completos para garantir que a saúde do seu pet está sempre em dia.</p>
+                    </div>
+                    <!-- Card de Serviço 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
+                        <div class="bg-pet-teal inline-block p-4 rounded-full mb-4">
+                           <svg class="w-8 h-8 text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />  <polyline points="14 2 14 8 20 8" />  <line x1="12" y1="18" x2="12" y2="12" />  <line x1="9" y1="15" x2="15" y2="15" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Vacinação</h3>
+                        <p class="text-gray-600">Proteja seu amigo contra doenças com nosso programa de vacinação em casa.</p>
+                    </div>
+                    <!-- Card de Serviço 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
+                        <div class="bg-pet-teal inline-block p-4 rounded-full mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Exames Laboratoriais</h3>
+                        <p class="text-gray-600">Coleta de material para exames com o mínimo de estresse para o animal.</p>
+                    </div>
+                    <!-- Card de Serviço 4 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
+                        <div class="bg-pet-teal inline-block p-4 rounded-full mb-4">
+                           <svg class="w-8 h-8 text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />  <path d="M12 8v4l3 3" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Pequenas Emergências</h3>
+                        <p class="text-gray-600">Atendimento para casos de baixa complexidade que necessitam de atenção rápida.</p>
+                    </div>
+                    <!-- NOVO Card de Serviço 5: Teleconsulta -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300 lg:col-span-1 md:col-span-2 lg:col-start-2">
+                        <div class="bg-pet-teal inline-block p-4 rounded-full mb-4">
+                           <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Teleconsulta</h3>
+                        <p class="text-gray-600">Orientações e acompanhamento veterinário por vídeo, de onde você estiver.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO COMO FUNCIONA -->
+        <section id="como-funciona" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12">Simples, Rápido e Confiável</h2>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+                    <!-- Passo 1 -->
+                    <div class="flex flex-col items-center">
+                        <div class="bg-pet-coral text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mb-4">1</div>
+                        <h3 class="text-xl font-bold mb-2">Agende a Visita</h3>
+                        <p class="text-gray-600 max-w-xs">Entre em contato pelo WhatsApp e escolha o melhor dia e horário.</p>
+                    </div>
+                    <!-- Passo 2 -->
+                    <div class="flex flex-col items-center">
+                        <div class="bg-pet-coral text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mb-4">2</div>
+                        <h3 class="text-xl font-bold mb-2">Receba o Veterinário</h3>
+                        <p class="text-gray-600 max-w-xs">Chegaremos na sua casa com todo o equipamento necessário.</p>
+                    </div>
+                    <!-- Passo 3 -->
+                    <div class="flex flex-col items-center">
+                        <div class="bg-pet-coral text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mb-4">3</div>
+                        <h3 class="text-xl font-bold mb-2">Cuidado Completo</h3>
+                        <p class="text-gray-600 max-w-xs">Seu pet recebe o tratamento e o carinho que merece, sem sair do seu ambiente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO SOBRE NÓS -->
+        <section id="sobre" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <!-- Substitua pela sua foto profissional -->
+                        <img src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?q=80&w=1887&auto=format&fit=crop" alt="Veterinário sorrindo com um cachorro" class="rounded-lg shadow-2xl w-full">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Paixão por Cuidar, Onde Quer que Você Esteja</h2>
+                        <p class="text-gray-600 mb-4">
+                            A Pet+ nasceu do desejo de unir a excelência técnica da medicina veterinária com um atendimento mais humano, próximo e sem estresse. Eu sou Patrícia Canossa, médico(a) veterinário(a) mestre, pela UNESP - Jaboticabal, e acredito que o melhor lugar para cuidar de um membro da família é em casa.
+                        </p>
+                        <p class="text-gray-600">
+                            Nossa missão é oferecer conveniência para os tutores e, principalmente, reduzir a ansiedade dos pets, realizando todos os procedimentos em um ambiente familiar e seguro para eles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ E CONTATO -->
+    <footer id="contato" class="bg-pet-dark-gray text-white pt-16 pb-8">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Pronto para agendar?</h2>
+            <p class="text-gray-300 mb-8 max-w-xl mx-auto">Entre em contato conosco. Será um prazer cuidar do seu melhor amigo!</p>
+            
+            <a href="https://wa.me/5516999913289" target="_blank" class="bg-green-500 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-green-600 transition duration-300 inline-flex items-center gap-3 shadow-lg">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.58-1.452L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.267.655 4.398 1.803 6.12l-1.34 4.887 4.885-1.342z"/></svg>
+                Agendar via WhatsApp
+            </a>
+            
+            <div class="mt-12 border-t border-gray-700 pt-8">
+                <p class="font-bold">Área de Atendimento:</p>
+                <p class="text-gray-400 mb-4"> Arcoville - Embaré - Jardim do Bosque - Jardim Ipanema - Parque Fehr - Parque dos Flamboyants - Parque Quebec </p>
+                <p class="font-bold">Email:</p>
+                <p class="text-gray-400 mb-6"><a href="mailto:contato@petmaisvet.com.br" class="hover:text-pet-coral">contato@petmaisvet.com.br</a></p>
+                
+                <div class="flex justify-center space-x-4 mb-8">
+                    <!-- Adicione aqui os links para suas redes sociais -->
+                    <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm6.406-11.845a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z" clip-rule="evenodd" /></svg></a>
+                </div>
+                
+                <p class="text-gray-500 text-sm">&copy; 2024 Pet+. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script para o menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
